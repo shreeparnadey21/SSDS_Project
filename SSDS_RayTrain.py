@@ -5,6 +5,7 @@ import torch.nn as nn
 from torch import optim
 import ray.train as train
 from ray.train.trainer import Trainer
+import time
 
 par={'nproc':2,'batch_size':32, 'epochs':1, 'cuda':torch.cuda.is_available(), 'model':'resnet50', 'dataset':'MNIST'}
 
@@ -109,7 +110,7 @@ def data_():
 
     return (dtr,dte)
 
-def train(dataloader, model, optimizer):
+def train_(dataloader, model, optimizer):
     
     model.train()
     loss_fn=nn.CrossEntropyLoss()
@@ -124,7 +125,7 @@ def train(dataloader, model, optimizer):
         loss.backward()
         optimizer.step()
 
-def test(dataloader, model):
+def test_(dataloader, model):
     
     model.eval()
     loss_fn=nn.CrossEntropyLoss()
@@ -165,8 +166,10 @@ def train_func():
     optimizer=optim.SGD(model.parameters(),lr=0.1)
 
     for _ in range(par['epochs']):
-        train(train_dataloader, model, optimizer)
-        test(test_dataloader, model)
+        tt=(time.time())
+        train_(train_dataloader, model, optimizer)
+        print(epcs,(time.time()-tt)/60)
+        test_(test_dataloader, model)
 
 if __name__ == "__main__":
     trainer = Trainer(backend="torch", num_workers=par['nproc'], use_gpu=True)
