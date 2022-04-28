@@ -114,7 +114,6 @@ if __name__ == '__main__':
         tr_loader.sampler.set_epoch(i)
 
         epoch_loss = 0
-        # train the model for one epoch
         pbar = tqdm(tr_loader)
         for x, y in pbar:
             x = x.to(device, non_blocking=True)
