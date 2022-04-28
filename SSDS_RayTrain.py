@@ -165,7 +165,7 @@ def train_func():
 
     optimizer=optim.SGD(model.parameters(),lr=0.1)
 
-    for _ in range(par['epochs']):
+    for epcs in range(par['epochs']):
         tt=(time.time())
         train_(train_dataloader, model, optimizer)
         print(epcs,(time.time()-tt)/60)
