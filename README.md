@@ -28,7 +28,7 @@ SSDS_Horovod.py reference: https://github.com/horovod/horovod/tree/master/exampl
 SSDS_RayTrain reference: https://docs.ray.io/en/latest/raysgd/raysgd.html, 
 https://docs.ray.io/en/latest/train/examples/train_fashion_mnist_example.html
 
-SSDS_DistPytorch: https://github.com/olehb/pytorch_ddp_tutorial/blob/main/ddp_tutorial_multi_gpu.py
+SSDS_DistPytorch Reference: https://github.com/olehb/pytorch_ddp_tutorial/blob/main/ddp_tutorial_multi_gpu.py
 
-The Training and Testing code used in SSDS_DistPytorch.py is directly taken from the above Github site.
+The Training and Testing code used in SSDS_DistPytorch.py is directly taken from the above mentioned reffered Github site.
 This code itself was not properly running on cluster and due to lack of time we could't make desired modifications to code.
