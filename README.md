@@ -23,6 +23,9 @@ To run the file: python3 SSDS_RayTrain.py
 
 References for code:
 
-https://github.com/horovod/horovod
+SSDS_Horovod.py reference: https://github.com/horovod/horovod/tree/master/examples/pytorch
 
-https://docs.ray.io/en/latest/raysgd/raysgd.html
+SSDS_RayTrain reference: https://docs.ray.io/en/latest/raysgd/raysgd.html, 
+https://docs.ray.io/en/latest/train/examples/train_fashion_mnist_example.html
+
+SSDS_DistPytorch: https://github.com/olehb/pytorch_ddp_tutorial/blob/main/ddp_tutorial_multi_gpu.py
